@@ -1,0 +1,613 @@
+INTELLIGENT SWARM BASED BOTS FOR
+CONTINUOUS AREA PATROLLING AND DETECTION
+Preetham Krishan K J
+Dept. of Electronics and Communication
+Sahyadri college of engineering and management
+Mangalore, India.
+preetham.ec23@sahyadri.edu.in
+
+Vaishak D Karkera
+Dept. of Electronics and Communication
+Sahyadri college of engineering and management
+Mangalore, India.
+vaishak.ec23@sahyadri.edu.in
+
+Ashwin Suresh
+Dept. of Electronics and Communication
+Sahyadri college of engineering and management
+Mangalore, India.
+ashwin.ec23@sahyadri.edu.in
+
+Neha Raj
+Dept. of Electronics and Communication
+Sahyadri college of engineering and management
+Mangalore, India.
+neha.ec23@sahyadri.edu.in
+
+Mrs. Mehnaz Fathima C
+Assistant Professor
+Dept. of Electronics and Communication
+Sahyadri college of engineering and management
+Mangalore, India.
+fathima.ec@sahyadri.edu.in
+
+Abstract- Border surveillance is major factor in
+national security, yet the existing system having
+some of limitations like limited coverage and
+delayed response. This paper presents smart
+border surveillance system using ESP-32 with
+swarm nodes integrated with multiple sensors
+like radar, Time-of-flight, GPS, and camera
+module. This system gives real time data of
+environment like detects motion, captures
+images, and verifies intrusions using sensor
+fusion and lightweight object detection and
+others. Servo and motors enable the mobile
+capturing of data and GPS location updates. The
+current system uses mapping of area for
+autonomous movement and swarm technology.
+This system provides reliability and scalability
+and it is mainly cost effective, low power
+consumption and suitable for deployment in
+areas having low human coverage. The system
+also integrates micro-ROS running on ESP32
+with ROS 2 Jazzy framework for distributed
+framework.
+Keywords--Border Surveillance, ESP32,ROS 2,
+Multi-Sensor Fusion, Radar Sensor, ToF, ESP32CAM, YOLO, GPS Tracking, Smart Monitoring.
+
+I.INTRODUCTION
+
+Border safety plays crucial role in national security
+aimed at protecting the nation from the enemy or the
+treats through human or robotic attack systems and
+major from the terrorist groups [10]. Traditional
+surveillance methods such as manual patrolling,
+fixed camera installations are used from decades are
+old technique in safety systems [14]. These systems
+have been facing several loop holes and system
+failures, operational cost energy consumption and
+maintenance in remote areas are very difficult and
+dangerous.
+With increase in demand for autonomous system the
+fields like IoT and embedded systems there is
+growing shift to IoT, wireless communication and
+automated systems [4],[14]. Modern equipments are
+mainly try to reduce human involvement and
+dependency systems having with high accuracy and
+response time. By applying this thought, wide area
+coverage and monitoring using multiple
+interconnected nodes has emerged as a major
+advancement in the system [19]. Instead of relying
+on a single centralized system, multiple low-cost
+
+devices can be deployed across a wide area to
+provide continuous and combined real time
+monitoring. In this paper the major focus is in smart
+border surveillance system based on ESP32
+microcontroller nodes operating in a swarm-like
+architecture [7],[19]. Each node is equipped with
+multiple sensors, including radar for motion
+detection, Time-of-Flight (ToF) sensors for distance
+measurement, and camera modules for visual
+monitoring [11],[12],[13]. The combination of these
+allows to work in multilevel processing and
+receiving real time coverage and verification of the
+area and environment surrounding reducing false
+alarm, gps system to provide present location and
+radar coverage system to identify the environment
+system.
+Recent development in Robot Operating System 2
+(ROS 2) and micro-ROS have enabled resourceconstrained embedded platforms such as ESP32 to
+participate in distributed robotic systems. Unlike
+traditional standalone robots, micro-ROS allows
+embedded controllers to exchange odometry, sensor
+data and control commands with a ROS 2 ecosystem
+over lightweight communication protocols. This
+architecture combines the low power consumption
+of ESP32 with the advanced capabilities of ROS 2
+including mapping, localization, path planning and
+coordinated swarm control.
+This system also has motor system using servo and
+N20 encoder motors for identifying camera
+positions, object detection to identify humans and
+capture suspicious objects [8],[18]. This system has
+decentralized by having nodes which can process
+data locally and communicate using nearby nodes
+forming communicative nodes, this system
+increases scalability and coverage for large areas
+[9],[19].
+Totally this system aims in providing a cost
+effective, scalable combined processing system
+using embedded technology and most growing area
+of interest in national security and surveillance
+combining decentralized communication system,
+covering major system limitations present in
+traditional existing methods and offers one of the
+effective systems using modern technology for
+security systems [20].
+
+II. LITERATURE SURVEY
+In recent years, many researchers have worked on
+improving border surveillance by using IoT and
+embedded systems [4], [14]. These systems make it
+easier to monitor large areas and collect data in real
+time [9], [17]. Some studies have focused on ESP32based designs and wireless sensor networks for
+remote monitoring [7], [10]. Deep learning methods,
+especially for object detection, have also helped in
+identifying intrusions more accurately [8], [18]. To
+make systems more reliable, researchers often
+combine sensors like radar, ToF, and cameras to
+reduce false alarms [11], [12], [13].
+Recent studies shows that micro-ROS enables
+effective communication between the system and
+ROS 2 ecosystem [22],[24]. When it is integrated
+with SLAM Toolbox and Navigation2, it supports
+autonomous mapping, localization, path planning,
+and multi-robot coordination while reducing the
+computational load on embedded devices [24], [25].
+There is also growing interest in swarm-based
+systems for better coverage[5],[19],although issues
+like cost, coordination, and centralized control still
+remain [20].
+III. WORK METHODOLOGY
+This project smart border surveillance system
+operates using a combination of multi-sensor
+detection, edge processing, and swarm-based
+communication [9], [11]. The major principle
+behind the working of the system is to ensure real
+time monitoring, accurate intrusion detection and
+effective response to human intervention is
+observed.
+The system initially used radar system to
+continuously scan the area and detect motion [12].
+Radar is preferred since it can work effectively in
+low visibility and darkness, fog. If the motion is
+detected the ESP32 microcontroller activates the
+ESP32-CAM module, which captures images of the
+monitored region [7]. These signals are processed to
+detect the object whether it is human or any
+suspicious entity [8].
+To improve accuracy and avoid false alarms, the
+system uses a Time-of-Flight (ToF) sensor [13]. The
+
+ToF sensor measures the distance between the
+object and the surveillance node, helping confirm
+whether the detected motion is relevant. This
+combination of radar and distance sensing
+significantly increases detection reliability
+compared to single-sensor systems.
+
+IV. BLOCK DIAGRAM
+
+The system has servo motor for movement of
+camera in adjusting the angle. When an object is
+detected, the servo motor rotates the camera to track
+the movement, ensuring continuous monitoring.
+N20 encoder motor is used for deployment in remote
+areas and for implementing as mobile unit with
+continuous movement around the object.
+The ESP32 communicates with a ROS 2 Jazzy
+workstation over Wi-Fi using UDP through the
+micro-ROS Agent[22],[23]. This communication
+architecture provides reliable low-latency data
+exchange between the embedded controller and the
+ROS 2 environment enabling efficient real-time
+operation [22].
+The ROS 2 workstation performs computationally
+intensive tasks such as SLAM, localization and path
+planning using SLAM Toolbox and the Navigation2
+framework [24], [25]. Wheel encoder odometry and
+ultrasonic sensor measurements are processed to
+generate a real-time occupancy map for autonomous
+navigation. By offloading these operations to the
+workstation, the ESP32 is dedicated in improving
+overall system efficiency and scalability [22], [25].
+GPS module is integrated into each node to provide
+real-time location data. Whenever an intrusion is
+detected, the exact coordinates are recorded and
+transmitted along with the alert. This helps in quick
+identification of the intrusion location.
+All the processed data, including sensor readings,
+captured images, and GPS coordinates, are
+transmitted via Wi-Fi to a monitoring system. The
+system can display real-time alerts and status
+updates for effective decision-making.
+
+Fig.4.1: Block diagram showing the system flow.
+The sensing unit includes radar and ToF sensors,
+which detect motion and measure distance. The
+processing unit is the ESP32, which controls all
+operations and processes the data. The ESP32-CAM
+provides visual input, while the servo motor controls
+camera movement. The GPS module adds location
+tracking capability. The communication uses WIFI
+to send data to monitoring system.
+
+A. Continuous Monitoring - Using radar the
+environment is scanned continuously, to detect
+movement in area with low visibility like darkness
+or fog. The system remains active to detect
+suspicious activity.
+B. Image Capture and Detection- The ESP32-Cam
+is used to detect the motion and capture the image.
+The captured images are analysed using object
+detection method and classified the object as human
+or potential threat.
+C. Distance Verification- The Time-of-Flight
+sensor is used to measure the distance between the
+system and object detected. This reduces the false
+detection and false alarms due to environmental
+movements.
+D. Tracking and Localization- The servo adjusts the
+camera angle to track the movement of object. GPS
+module records the exact location of the event
+occurring for effective tracking and detection.
+
+E. Data Transmission and coordination- The
+processed data and captured images are transmitted
+via Wi-Fi to the base system. The swarm network
+communicates with multiple nodes, increasing the
+coverage and reliable working across the large
+surveillance area.
+V. MULTI-SENSOR ANALYSIS
+This proposed surveillance system mainly depends
+on how precise the multiple sensors work together.
+Instead of depending on a single data source, this
+combines number of inputs from different sensors to
+improve the accuracy and overall performance of
+the system. This multi-sensor system ensures the
+system working under challenging environmental
+conditions such as dark area, fog or obstacles.
+A. System Integration and Data collection
+The system is designed to work under the control of
+ESP32 microcontroller controlling all the sensors
+[7]. The real time monitoring of environment data is
+carried by different sensors each sensor plays a
+specific role in real time data collection. The radar
+system continuously scans the area for motion
+detection [12], acting as primary data collection
+system. Once the motion is detected ESP32
+microcontroller activates the ESP32-CAM to
+capture the images and sent to processing.
+Parallelly the ToF sensor collects the distance
+information about detected object. Using this data
+the we can determine whether the object is in
+relevant range. The GPS module detects the
+geographical location and ensures the precise
+mapping of the object for detecting the exact
+location of object.
+All these data streams motion detection, visual
+input, distance measurement, location are gathered
+by ESP32. The collection of data is continuous and
+synchronized with no critical event is missed. The
+combined data from different sensors makes clear
+understanding rather than single sensor system.
+
+To tackle these limitations system integrates output
+of different sensors. When radar detects motion, it
+triggers the camera to capture image. The image is
+analysed to identify the object. The ToF sensor
+verifies the environment noise like leaves
+movement, animals.
+Additionally, servo motor enhances sensor
+integration by adjusting the camera direction based
+on the movement. This makes the system can
+dynamically focus on areas of interest, this improves
+surveillance coverage.
+C. Data Analysis
+The data is collected and integrated, it is analysed to
+make decisions. The ESP32 processes the sensor
+data locally, enabling faster response times
+compared to systems that rely completely on cloud
+processing. This procedure involves checking
+motion signals, verify distance and interpreting the
+visual data from the camera.
+A lightweight object detection method is used to
+analyse captured images and identify potential
+threats. The system compares the outputs from
+different sensors to confirm whether the detected
+activity is significant. If motion is detected but no
+object is identified in the image, the system may
+ignore the event as a false alarm.
+When all conditions are satisfied, the system
+classifies the event as a valid intrusion. The GPS
+coordinates are then attached to the alert, and the
+information is transmitted to the monitoring system.
+This helps in quick and accurate decision making.
+Overall, the multi-sensor data analysis improves
+decision making by combining different types of
+information. It ensures the system is accurate and
+reliable, making it suitable for real world
+application.
+VI. INTERFERENCE LATENCY ANALYSIS
+
+B. Sensor Integration
+Sensor integration is major part in the system, where
+different data from multiple sensors is combined to
+make decisions. Each sensor has its own limitation
+and strengths. Example radar is super effective in
+detecting the motion but cannot identify the type of
+object. Camera based systems can identify the object
+but may struggle in poor lightning conditions.
+
+Fig.6.1:Mapping of the assigned location using ROS
+
+The second graph explains how the system reduces
+wrong detections. The grey line shows the raw
+output of the detection model. It keeps changing due
+to lighting, shadows, or other disturbances.
+Sometimes, even when there is no real object, the
+value crosses the threshold and may cause a false
+detection [8],[18].
+The red line shows the fixed threshold value (70%).
+If we depend only on this threshold, the system may
+give incorrect results because of sudden spikes [11].
+
+Fig.6.2:
+
+Comparison of inference latency between
+synchronous and asynchronous processing methods under
+varying network conditions.
+
+The graph shows the difference between two ways
+of handling camera data in the system. In the
+synchronous method, the frames are processed one
+by one. Because of network delay, the frames start
+getting stored in a queue. This causes the system to
+take more time to process each frame. In the graph,
+this can be seen as large fluctuations and high
+latency values [9],[17]. Sometimes the delay
+becomes very high, which means the system is
+working on older frames instead of the latest ones.
+In the asynchronous method, the system always
+processes only the latest frame. It does not wait for
+all previous frames to be processed. Because of this,
+the delay is much lower and remains almost stable.
+Even when the network is not stable, the system
+continues to respond quickly [9]. From the graph, it
+is clear that this method is better for real-time
+applications since it reduces delay and improves
+performance [4],[8].
+
+VII. False Positive Reduction Using Temporal
+Smoothing
+
+Fig.7.1: Effect of temporal smoothing in reducing false
+positives by validating detections across multiple consecutive
+frames.
+
+To solve this, the system checks multiple frames
+before confirming a detection. Instead of taking a
+decision from a single frame, it looks at a few
+continuous frames. Only if the detection is repeated
+for several frames, it is considered valid. This is
+shown by the blue line, where detections appear
+only in stable regions [7],[12].
+Because of this system, false alarms are reduced and
+the system becomes more reliable. It helps the
+system ignore temporary changes and focus only on
+actual objects [4],[19].
+
+VIII. FEEDBACK ANALYSIS
+The performance of the proposed surveillance
+system was evaluating based on the result of
+continuous testing under different environment
+conditions. By observing the system behaviour like
+detection accuracy, response time and reliability the
+feedback was noted. It was observed that the
+integration of multiple sensors made the system very
+reliable and improved systems efficiency [11]. The
+detection of intrusions was very accurate compared
+to single sensor approach.
+During testing, the radar sensor effectively detected
+motion even in low-light and partially obstructed
+conditions. Radar detection sometimes resulted in
+false triggers due to environmental disturbances.
+This issue was addressed by combining radar data
+with ToF sensor measurements and camera-based
+detection [13],[8], which helped verify the presence
+of actual objects.
+The object detection module provided accurate
+identification in most cases, especially in well-lit
+conditions. The use of servo-based camera tracking
+further improved monitoring by ensuring that
+moving objects remained within the camera’s field
+
+of view. GPS integration also proved reliable [20],
+providing precise location data for detected events.
+Overall, the system demonstrated stable
+performance with very less false alarms and real
+time data collection and response.
+
+sensor also worked properly and showed expected
+changes during testing. Overall, all hardware
+components functioned well together without major
+issues.
+
+The multi sensor fusion and edge processing are
+effective in enhancing the real time surveillance,
+making the system suitable for practical
+deployment.
+IX. RESULT
+The proposed surveillance system was built and
+tested to check how well it performs in terms of
+hardware, software, and real-time monitoring. From
+the observations, the system was able to run
+continuously and perform its functions without
+major delays, showing reliable overall performance
+[4], [9].
+
+Fig.9.2: Subordinate Bot System.
+The software part has a lightweight detection
+method was used so that it could run efficiently on
+the system. The detection was reasonably accurate
+under normal conditions. To avoid wrong
+detections, the system checked multiple frames
+before confirming an event instead of depending on
+a single frame. This helped reduce false alarms
+caused by lighting changes or small disturbances
+[11], [18]. Since the processing was done locally on
+the ESP32, the system was able to respond quickly
+without relying on external servers. The system also
+remained stable when tested under slightly different
+lighting and movement conditions.
+Communication between nodes using ESP-NOW
+was tested and worked reliably over short distances.
+Data transfer was quick, and there was no major
+delay or data loss noticed during testing [17]. This
+made it suitable for real-time communication
+between different parts of the system.
+
+Fig.9.1: Admin Bot System.
+The above hardware part has the ESP32-based setup
+worked smoothly and handled inputs from different
+sensors without any instability. The radar-style
+scanning using the ultrasonic sensor and servo
+motor was able to detect objects across different
+angles, which helped in covering a wider area
+compared to a fixed setup [12]. The ESP32-CAM
+captured images whenever an object was detected,
+and the quality was good enough for basic
+verification [7]. The GPS module took a few
+seconds to lock initially but then provided stable
+location data [20]. The temperature and humidity
+
+Fig.9.3: Dashboard showing real-time data.
+
+nodes working together also makes the system more
+flexible and scalable [20].
+
+Fig.9.4: Live Mapping using GPS module.
+The WebSocket-based dashboard made it easy to
+monitor the system. It displayed sensor values,
+alerts, and system status clearly in real time. The
+updates were smooth, and there was no noticeable
+lag, which helped in understanding what the system
+was doing at any moment.
+Overall, the system performed well during testing
+and showed that all parts were working together
+properly. It provides a simple and practical solution
+for basic surveillance. With further improvements,
+especially in detection accuracy and coverage, the
+system can be made more effective for real-world
+use [19],[20].
+
+X. CONCLUSION
+
+Experimental evaluation demonstrated that the
+micro-ROS communication framework provided
+reliable transmission of odometry and sensor data
+with low communication latency [22],[23]. Realtime monitoring in the ROS 2 environment
+confirmed the successful exchange of velocity
+commands wheel encoder measurements, and
+ultrasonic sensor data between the ESP32-based
+robots and the workstation [22],[24]. SLAM
+Toolbox generated occupancy maps that accurately
+represented the experimental environment enabling
+autonomous navigation and coordinated swarm
+operation [24], [25].
+The micro-ROS-based architecture provides a
+scalable platform in which multiple ESP32-based
+robots can cooperatively perform exploration,
+distributed mapping, and surveillance while
+maintaining low computational requirements on
+each embedded node [22], [23].
+Overall, the design offers a practical and affordable
+solution for real-world surveillance needs. Further
+improvements can focus on better AI models, power
+efficiency, and scaling the system for larger
+deployments.
+
+This work presents a smart border surveillance
+system built using ESP32-based nodes that operate
+together in a swarm-like manner [7],[19].
+The main aim was to overcome the drawbacks of
+traditional systems, especially their dependence on
+manual monitoring and slower response. By using a
+combination of radar, ToF, and camera modules, the
+system is able to detect intrusions more reliably
+through cross-verification of sensor data.
+One of the key advantages of the system is its use of
+local processing, which helps in making faster
+decisions without depending heavily on cloud
+services. The addition of GPS makes it easier to
+identify the exact location of detected events, which
+can be useful for quick action. Features like camera
+rotation using a servo motor and optional movement
+using motors also improve how effectively the area
+can be monitored [11], [13], [8].
+During testing, the system performed consistently
+across different conditions, showing fewer false
+alarms and quicker responses. The use of multiple
+
+XI. REFERENCE
+[1] “Surveillance Bot for Detecting the Intruders in
+Border Area,” 2021.
+[2] “Privacy-Preserving and Efficient Border
+Surveillance System Using Advanced Deep
+Learning and Cryptographic Techniques,” 2022.
+[3] “Development of Autonomous Mobile Robot
+Based IoT Integration for Surveillance Guard,”
+2022.
+[4] “A Cloud-Based Autonomous Multipurpose
+System with Self-Communicating Bots and Swarm
+of Drones,” 2021.
+[5] “Swarm Bots System Design for Echolocation,”
+2020.
+[6]
+“Next-Generation
+Defence
+Security:
+Blockchain, IoT, Digital Twin and Face
+
+Recognition-Based Smart Monitoring System,”
+2023.
+
+[14] “Design and Implementation of IoT-Based
+Security Systems,” 2021.
+
+[7] “IoT-Based Smart Surveillance System Using
+ESP32-CAM,” 2021.
+
+[15] “Smart Monitoring System Using Embedded
+Vision and IoT,” 2022.
+
+[8] “Real-Time Object Detection Using Deep
+Learning Techniques,” 2020.
+
+[16] “Low Power Embedded
+Surveillance Applications,” 2020.
+
+[9] “Edge Computing Based Intelligent Surveillance
+System,” 2021.
+
+[17] “Real-Time Monitoring and Alert System
+Using ESP32,” 2021.
+
+[10] “Wireless Sensor Network for Border
+Surveillance Applications,” 2019.
+
+[18] “AI-Based Object Detection for Security
+Applications,” 2022.
+
+[11] “Multi-Sensor Fusion Techniques for Smart
+Monitoring Systems,” 2021.
+
+[19] “Distributed Surveillance Systems Using
+Multi-Agent Architecture,” 2021.
+
+[12] “Radar-Based Motion Detection System for
+Security Applications,” 2020.
+
+[20] “Intelligent Border Monitoring System Using
+IoT and Sensor Networks,” 2022.
+
+[13] “Time-of-Flight Sensor Based Distance
+Measurement in Embedded Systems,” 2019.
+
+Systems
+
+for
+
+
