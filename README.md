@@ -1,101 +1,181 @@
 <div align="center">
-  <h1>Intelligent Swarm-Based Bots for Continuous Area Patrolling and Detection</h1>
-  <p><strong>Smart Border Surveillance System</strong></p>
+  
+# 🚀 Intelligent Swarm-Based Bots for Continuous Area Patrolling and Detection 🛡️
+
+**A Smart Border Surveillance System** 🚔 
+
+[![ROS 2](https://img.shields.io/badge/ROS_2-Jazzy-blue.svg)](https://docs.ros.org/en/jazzy/index.html)
+[![micro-ROS](https://img.shields.io/badge/micro--ROS-ESP32-green.svg)](https://micro.ros.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 </div>
-
-## 📖 Abstract
-
-Border surveillance is a major factor in national security. Yet, existing systems often suffer from limitations like limited coverage and delayed response times. This repository presents the codebase and methodology for a **Smart Border Surveillance System** utilizing ESP32 microcontrollers with swarm nodes, integrated with a multi-sensor array including Radar, Time-of-Flight (ToF), GPS, and Camera modules. 
-
-The system provides real-time environmental data, detects motion, captures images, and verifies intrusions using sensor fusion and lightweight object detection. Powered by **micro-ROS** and the **ROS 2 Jazzy framework**, this decentralized, cost-effective, and low-power system is designed for deployment in remote areas with low human coverage, offering high reliability, scalability, and autonomy.
 
 ---
 
-## 🚀 System Architecture & Methodology
+## 🌟 The Future of Border Security is Here!
 
-The project operates using a combination of multi-sensor detection, edge processing, and swarm-based communication to ensure real-time monitoring, accurate intrusion detection, and effective response.
+Say goodbye to delayed response times and limited surveillance coverage. We are bringing **swarm intelligence** to national security! 🌍 
 
-### Multi-Sensor Fusion
-1. **Continuous Monitoring:** Radar continuously scans the environment, effectively detecting movement even in low visibility (darkness, fog).
-2. **Image Capture & Detection:** Upon motion detection, the ESP32 activates the ESP32-CAM to capture images, which are analyzed using lightweight object detection to identify humans or potential threats.
-3. **Distance Verification:** A Time-of-Flight (ToF) sensor measures the distance between the system and the detected object to filter out environmental noise (like moving leaves) and reduce false alarms.
-4. **Tracking & Localization:** A servo motor adjusts the camera angle to track movement, while the GPS module records exact coordinates for effective tracking.
+By utilizing an army of affordable **ESP32 microcontrollers**, our system deploys a swarm of autonomous bots that communicate continuously, patrolling borders efficiently. Powered by **micro-ROS** and the cutting-edge **ROS 2 Jazzy framework**, this decentralized, low-power system is built to thrive in harsh, remote environments.
 
 <div align="center">
-  <img src="images/img-000.jpg" width="600" alt="Block Diagram">
+  <img src="images/img-000.jpg" width="700" alt="Block Diagram">
   <br>
-  <em>Fig 1: Block diagram showing the system flow</em>
+  <em>⚙️ Fig 1: The Core Brain — Block diagram showing the system flow</em>
 </div>
 
 ---
 
-## 🤖 Bot Systems
+## 🤖 What Makes These Bots So Smart? 
 
-The hardware is designed for robustness and ease of deployment. The swarm consists of Admin and Subordinate bots coordinating seamlessly.
+It’s all about the data! Our bots use **Multi-Sensor Fusion** to process the environment like a living creature:
+
+* 📡 **Radar Sensor:** Continuously scans the environment. It doesn't care if it's pitch black or foggy; the radar sees everything!
+* 👁️ **ESP32-CAM:** The eyes of the operation! Once the radar detects movement, the camera snaps a picture and runs lightweight object detection to identify humans or potential threats.
+* 📏 **Time-of-Flight (ToF):** Ever had an alarm triggered by a falling leaf? 🍃 ToF measures the exact distance to an object, filtering out environmental noise and slashing false alarms.
+* 🗺️ **GPS Tracking:** Whenever an intrusion occurs, the exact real-time coordinates are transmitted to the dashboard.
+* 🎯 **Dynamic Tracking:** A servo motor automatically pans the camera to track moving targets!
 
 <div align="center">
   <table>
     <tr>
-      <td align="center"><img src="images/img-004.jpg" width="400" alt="Admin Bot System"><br><em>Fig 2: Admin Bot System</em></td>
-      <td align="center"><img src="images/img-005.jpg" width="400" alt="Subordinate Bot System"><br><em>Fig 3: Subordinate Bot System</em></td>
+      <td align="center"><img src="images/img-004.jpg" width="400" alt="Admin Bot System"><br><em>👑 Fig 2: The Admin Bot</em></td>
+      <td align="center"><img src="images/img-005.jpg" width="400" alt="Subordinate Bot System"><br><em>🦾 Fig 3: The Subordinate Bot</em></td>
     </tr>
   </table>
 </div>
 
 ---
 
-## 📊 Data Analysis & Results
+## ⚡ Edge Computing & Blazing Fast Responses
 
-By processing sensor data locally on the ESP32 edge nodes, the system achieves much faster response times compared to fully cloud-dependent setups.
+Why wait for a cloud server when you can think on your feet? By processing sensor data locally on the ESP32 edge nodes, the bots achieve **lightning-fast response times**.
 
-### Inference Latency & Temporal Smoothing
-
-The asynchronous handling of camera data ensures low and stable latency. Furthermore, to eliminate false positives, the system utilizes **temporal smoothing**—verifying detections across multiple consecutive frames before triggering an alert.
+We use **Asynchronous Processing** to handle camera data, which keeps latency low and stable. To make sure we never get fooled by shadows or bugs, we use **Temporal Smoothing**—the bot verifies the detection across multiple consecutive frames before sounding the alarm! 🚨
 
 <div align="center">
   <table>
     <tr>
-      <td align="center"><img src="images/img-002.png" width="400" alt="Inference Latency"><br><em>Fig 4: Comparison of inference latency (Synchronous vs. Asynchronous)</em></td>
-      <td align="center"><img src="images/img-003.png" width="400" alt="Temporal Smoothing"><br><em>Fig 5: False Positive Reduction Using Temporal Smoothing</em></td>
+      <td align="center"><img src="images/img-002.png" width="400" alt="Inference Latency"><br><em>⏱️ Fig 4: Synchronous vs. Asynchronous Latency</em></td>
+      <td align="center"><img src="images/img-003.png" width="400" alt="Temporal Smoothing"><br><em>📉 Fig 5: False Positive Reduction</em></td>
     </tr>
   </table>
 </div>
 
-### Mapping and Dashboard Integration
+---
 
-Through the micro-ROS communication framework, odometry and sensor data are reliably transmitted with low latency to a ROS 2 workstation. SLAM Toolbox is utilized to generate real-time occupancy maps for autonomous navigation. 
+## 🗺️ Live Mapping & The Command Dashboard
 
-A WebSocket-based dashboard displays sensor values, alerts, and system status clearly in real time.
+Through our custom **micro-ROS** framework, odometry and sensor data fly over Wi-Fi directly to the ROS 2 command center. We use the **SLAM Toolbox** to generate real-time occupancy maps while the bots autonomously navigate the terrain.
+
+Everything is monitored on a sleek, WebSocket-based live dashboard. 💻
 
 <div align="center">
   <table>
     <tr>
-      <td align="center"><img src="images/img-001.jpg" width="400" alt="ROS Mapping"><br><em>Fig 6: Mapping of the assigned location using ROS</em></td>
-      <td align="center"><img src="images/img-007.jpg" width="400" alt="Live Mapping"><br><em>Fig 7: Live Mapping using GPS module</em></td>
+      <td align="center"><img src="images/img-001.jpg" width="400" alt="ROS Mapping"><br><em>📍 Fig 6: Live ROS Occupancy Map</em></td>
+      <td align="center"><img src="images/img-007.jpg" width="400" alt="Live Mapping"><br><em>🛰️ Fig 7: Real-Time GPS Tracking</em></td>
     </tr>
   </table>
 </div>
 
 <div align="center">
-  <img src="images/img-006.jpg" width="600" alt="Dashboard">
+  <img src="images/img-006.jpg" width="700" alt="Dashboard">
   <br>
-  <em>Fig 8: Dashboard showing real-time data</em>
+  <em>📊 Fig 8: The Command Center Dashboard</em>
 </div>
 
 ---
 
-## 💻 Code Structure
+## 🛠️ Step-by-Step ROS 2 Setup
 
-- `/esp32_slam_bot/esp32_slam_bot.ino`: Main ROS 2 / micro-ROS source code for the ESP32 SLAM Robot.
+Want to fire up the bots yourself? Run these commands **one by one**, each in a **separate terminal** (unless mentioned otherwise).
 
-## 🛠️ Setup & Deployment
+### 🖥️ Terminal 1: Start the micro-ROS Agent
+```bash
+source /opt/ros/jazzy/setup.bash
+ros2 run micro_ros_agent micro_ros_agent udp4 --port 8888
+```
 
-1. Open `/esp32_slam_bot/esp32_slam_bot.ino` in the Arduino IDE.
-2. Install the necessary libraries (`micro_ros_arduino`, `ESP32Servo`).
-3. Configure your WiFi credentials (`ssid`, `pass`) and ROS 2 agent IP (`agent_ip`).
-4. Flash the code to the ESP32.
-5. Run the `micro-ROS-agent` on your workstation to bridge the ESP32 to the ROS 2 Jazzy ecosystem.
+### 🖥️ Terminal 2: Publish Odometry (odom → base_link TF)
+```bash
+source /opt/ros/jazzy/setup.bash
+python3 ~/odom_to_tf.py
+```
+
+### 🖥️ Terminal 3: Static Transform (base_link → laser TF)
+```bash
+source /opt/ros/jazzy/setup.bash
+ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link laser
+```
+
+### 🖥️ Terminal 4: Verify the Topics
+First, check what topics are alive:
+```bash
+source /opt/ros/jazzy/setup.bash
+ros2 topic list
+```
+Then, make sure data is actually flowing:
+```bash
+ros2 topic echo /scan --once
+ros2 topic echo /odom --once
+```
+
+### 🖥️ Terminal 5: Verify the Transforms (TF)
+```bash
+source /opt/ros/jazzy/setup.bash
+ros2 run tf2_ros tf2_echo odom base_link
+```
+*(Stop with `Ctrl+C` after it prints values)*
+
+Next, verify the laser:
+```bash
+ros2 run tf2_ros tf2_echo base_link laser
+```
+*(Stop with `Ctrl+C`)*
+
+### 🖥️ Terminal 6: Start SLAM! 🗺️
+```bash
+source /opt/ros/jazzy/setup.bash
+ros2 launch slam_toolbox online_async_launch.py
+```
+
+### 🖥️ Terminal 7: Check & Save the Map
+```bash
+source /opt/ros/jazzy/setup.bash
+ros2 topic echo /map --once
+```
+*Note: Only if this prints map data, save it using the command below:*
+```bash
+ros2 run nav2_map_server map_saver_cli -f my_room_map --ros-args -p map_subscribe_transient_local:=true
+```
+
+### 🖥️ Terminal 8: Visualize Everything in RViz 🕶️
+```bash
+source /opt/ros/jazzy/setup.bash
+rviz2
+```
+**In RViz, set up your display:**
+* Set **Fixed Frame** to `map`
+* Click **Add** → **Map**
+* Click **Add** → **LaserScan** (Topic: `/scan`)
+* Click **Add** → **Odometry** (Topic: `/odom`)
 
 ---
-*Authors: Preetham Krishan K J, Vaishak D Karkera, Ashwin Suresh, Neha Raj, Mrs. Mehnaz Fathima C*
-*Dept. of Electronics and Communication, Sahyadri College of Engineering and Management, Mangalore, India.*
+
+## 🔮 The Road Ahead: Next Advances
+
+Our journey doesn't stop here. We are actively working on turning this from a single proof-of-concept into a massive decentralized army!
+
+* 🐝 **Advanced Swarm Intelligence Systems:** True decentralized coordination. Bots will soon communicate directly with each other to divide patrolling sectors automatically, avoiding redundant scanning.
+* 🧩 **Multi-Map Merging:** What happens when multiple bots map different areas? We are building a system to stitch and connect different maps generated by different bots into a single, massive global map of the surveillance frontier!
+
+---
+
+<div align="center">
+  
+### 👨‍💻 Meet the Masterminds Behind the Bots
+
+**[Ashwin](https://github.com/Ashwin-Sahyadri-ECE022)** | **[Neha](https://github.com/neharaj123346)** | **[Vaishak](https://github.com/VaishakSCEM543)** | **Preetham**
+
+</div>
